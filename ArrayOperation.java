@@ -5,7 +5,7 @@ public class ArrayOperation {
     public static void main(String[] args) {
 
         // Basic Array Operations
-        int[] arr = {10, 9, 2, 5, 4, 2, 18};
+        int[] arr = {10, 24, 9, 2, 5, 4, 2, 18};
         for (int a: arr) {
             System.out.print(a + " ");
         }
@@ -41,8 +41,7 @@ public class ArrayOperation {
         }
         System.out.println(count);
         int[] arrAfterDelete = new int[count];
-        int j = 0;
-        for (int i = 0; i < arr.length; i++) {
+        for (int i = 0, j= 0; i < arr.length; i++) {
             if (arr[i] != elementToDelete) {
                 arrAfterDelete[j] = arr[i];
                 j++;
@@ -54,6 +53,48 @@ public class ArrayOperation {
         }
         System.out.println();
 
+        // bubble sort
+//        for (int i = 0; i < arr.length - 1; ++i) {
+//            for (int j = 0; j < arr.length - 1 - i; ++j) {
+//                if (arr[j] > arr[j+1]) {
+//                    // swap
+//                    int temp = arr[j];
+//                    arr[j] = arr[j+1];
+//                    arr[j+1] = temp;
+//                }
+//            }
+//        }
+//        for (int num: arr) {
+//            System.out.print(num + " ");
+//        }
+//        System.out.println();
+
+        // selection sort
+        for (int i = 0; i < arr.length - 1; i++) {
+            int minIndex = i;
+            // find index of smallest element
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[j] < arr[minIndex]) {
+                    minIndex = j;
+                }
+            }
+            // swap
+            int temp = arr[minIndex];
+            arr[minIndex] = arr[i];
+            arr[i] = temp;
+
+        }
+        for (int num: arr) {
+            System.out.print(num + " ");
+        }
+
+
+
+
+
+
     }
+
+
 
 }
