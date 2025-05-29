@@ -1,5 +1,7 @@
 package array;
 
+import java.util.Arrays;
+
 public class ArrayOperation {
 
     public static void main(String[] args) {
@@ -87,10 +89,23 @@ public class ArrayOperation {
         for (int num: arr) {
             System.out.print(num + " ");
         }
+        System.out.println();
 
+        // reverse sorted array
+        // two-pointers
+        int start = 0;
+        int end = arr.length - 1;
 
-
-
+        while (start < end) {
+            int temp = arr[start];
+            arr[start] = arr[end];
+            arr[end] = temp;
+            ++start;
+            --end;
+        }
+        for (int num: arr) {
+            System.out.print(num + " ");
+        }
 
 
     }
