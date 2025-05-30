@@ -106,7 +106,19 @@ public class ArrayOperation {
         for (int num: arr) {
             System.out.print(num + " ");
         }
+        System.out.println();
 
+        String name = "Ironman";
+        for (char ch: name.toCharArray()) {
+            System.out.print(ch + " ");
+        }
+        System.out.println();
+
+        int sum = 18;
+        System.out.println(String.valueOf(sum).length());
+        int a = sum / 10;
+        int b = sum % 10;
+        System.out.println(a+b);
 
     }
 

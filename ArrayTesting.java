@@ -8,46 +8,39 @@ public class ArrayTesting {
 
         Scanner scanner = new Scanner(System.in);
 
-        // selection sort
-        int[] arr = {9,5,3,7,3,1};
-
-        for (int i = 0; i < arr.length - 1; ++i) {
-            int minIndex = i;
-            for (int j = i + 1; j < arr.length; ++j) {
-                if (arr[j] < arr[minIndex]){
-                    minIndex = j;
-                }
-            }
-            int temp = arr[minIndex];
-            arr[minIndex] = arr[i];
-            arr[i] = temp;
+        int[] arr = new int[2000];
+        int size = arr.length;
+        int i = 0;
+        while (size > 0) {
+            arr[i] = ++i;
+            --size;
         }
 
-        for (int a: arr) {
-            System.out.print(a + " ");
-        }
-        System.out.println();
+        // 1,2,3,....,2000
+        System.out.println(arr.length);
+        System.out.println(arr[0]);
+        System.out.println(arr[arr.length - 1]);
 
         int low = 0;
         int high = arr.length - 1;
-        int target = 7;
-        int foundIndex = - 1;
+        int value = 300;
+        int foundIndex = -1;
         while (low <= high) {
-            int mid = low + (high - low)/2;
-            if (arr[mid] == target) {
+            int mid = (low + high)/2;
+            if (arr[mid] == value) {
                 foundIndex = mid;
                 break;
-            } else if (arr[mid] < target) {
+            } else if (arr[mid] < value) {
                 low = mid + 1;
             } else {
                 high = mid - 1;
             }
         }
-        System.out.println(7 + " found at index: " + foundIndex);
+
+        System.out.printf("Element [%d] found at index: [%d]", value, foundIndex);
 
         scanner.close();
 
     }
-
 
 }
