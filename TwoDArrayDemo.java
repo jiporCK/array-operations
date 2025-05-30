@@ -47,6 +47,27 @@ public class TwoDArrayDemo {
             System.out.println();
         }
 
+        System.out.print("Enter your name to check out: ");
+        String nameToCheckOut = scanner.nextLine();
+
+        for (int i = 0; i < floor; ++i) {
+            for (int j = 0; j < room; ++j) {
+                if(condo[i][j].contains(nameToCheckOut)) {
+                    String[] tokens = condo[i][j].split("\\|");
+                    condo[i][j] = tokens[0];
+
+                }
+            }
+        }
+        for (String[] cd: condo) {
+            for (String c: cd) {
+                System.out.print(c + " ");
+            }
+            System.out.println();
+        }
+
+
+
         scanner.close();
     }
 
