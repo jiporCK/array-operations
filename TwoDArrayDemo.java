@@ -66,8 +66,6 @@ public class TwoDArrayDemo {
             System.out.println();
         }
 
-
-
         scanner.close();
     }
 
